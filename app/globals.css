@@ -1,0 +1,67 @@
+@import url("https://fonts.cdnfonts.com/css/familjen-grotesk");
+@import url("https://fonts.cdnfonts.com/css/jomolhari-2");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 150 20% 98%;
+    --foreground: 150 10% 4%;
+    --card: 150 20% 98%;
+    --card-foreground: 150 10% 4%;
+    --popover: 150 20% 98%;
+    --popover-foreground: 150 10% 4%;
+    --primary: 140 18% 51%;
+    --primary-foreground: 150 10% 4%;
+    --secondary: 139 24% 72%;
+    --secondary-foreground: 150 10% 4%;
+    --muted: 150 20% 20%;
+    --muted-foreground: 152 10% 70%;
+    --accent: 138 29% 64%;
+    --accent-foreground: 150 10% 4%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 150 10% 4%;
+    --border: 150 20% 20%;
+    --input: 150 20% 20%;
+    --ring: 138 29% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 150 20% 2%;
+    --foreground: 150 10% 96%;
+    --card: 150 20% 2%;
+    --card-foreground: 150 10% 96%;
+    --popover: 150 20% 2%;
+    --popover-foreground: 150 10% 96%;
+    --primary: 140 18% 49%;
+    --primary-foreground: 150 20% 2%;
+    --secondary: 139 24% 28%;
+    --secondary-foreground: 150 10% 96%;
+    --muted: 150 20% 80%;
+    --muted-foreground: 150 10% 96%;
+    --accent: 138 29% 36%;
+    --accent-foreground: 150 10% 96%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 156 10% 10%;
+    --border: 150 20% 60%;
+    --input: 150 20% 80%;
+    --ring: 138 29% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply max-w-6xl mx-auto;
+  }
+}
