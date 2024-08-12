@@ -1,9 +1,16 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 
-const MyLogo = ({ withText }: { withText?: boolean }) => {
+const MyLogo = ({
+  withText,
+  className,
+}: {
+  withText?: boolean;
+  className?: string;
+}) => {
   return (
     <div className="flex items-center gap-3 ">
-      <img className="w-10" src="/brand/logo.png" alt="" />
+      <img className={cn("w-10", className)} src="/brand/logo.png" alt="" />
       {withText ? (
         <div className="text-xl font-bold text-primary font-Familjen ">
           Pothos

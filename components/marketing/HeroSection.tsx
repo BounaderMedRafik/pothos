@@ -13,7 +13,7 @@ const HeroSection = () => {
         <div className="space-y-5 max-w-4xl mx-auto text-center">
           <div className=" bg-primary text-xs text-background rounded-full py-1 w-fit px-5 mx-auto">
             <div className="flex items-center gap-2">
-              <div> Build products for everyone</div>
+              <div>The one will handle your customers</div>
               <div>
                 <ArrowRight size={12} />
               </div>
