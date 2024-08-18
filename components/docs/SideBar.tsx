@@ -30,7 +30,7 @@ const SideBar = () => {
       </div>
       <div className=" text-xl mt-5">Components</div>
       <div className="flex  flex-col  mt-4">
-        {docs.map((item, i) => (
+        {components.map((item, i) => (
           <Link
             className={cn(
               "p-2 px-5 opacity-75  font-semibold hover:opacity-100 text-sm border-l border-l-foreground/25",
@@ -41,7 +41,16 @@ const SideBar = () => {
             href={item.link}
             key={i}
           >
-            {item.name}
+            <div className="flex items-center gap-2">
+              <div> {item.name}</div>
+              <div>
+                {item.new ? (
+                  <div className="w-fit px-2 text-xs py-0.5 bg-secondary/75 rounded-full  font-normal">
+                    New
+                  </div>
+                ) : null}
+              </div>
+            </div>
           </Link>
         ))}
       </div>

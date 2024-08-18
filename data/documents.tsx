@@ -1,68 +1,20 @@
 // type = starter | component
+// new = true | false
+
+// boiler plate
+// {
+//   name: "Introduction",
+//   link: "/docs/introduction",
+//   id: "introduction",
+//   type: "starter",
+//   description: (
+//     <>
+
+//     </>
+//   )
+// }
 
 export const docs = [
-  {
-    name: "Button",
-    type: "component",
-    description:
-      "A versatile button component with various styles and functionalities.",
-    link: "/docs/button",
-    id: "button",
-  },
-  {
-    name: "Input",
-    description:
-      "A customizable input component for text, password, email, and more.",
-    link: "/docs/input",
-    id: "input",
-    type: "component",
-  },
-  {
-    name: "Card",
-    description:
-      "A reusable card component for displaying content in a structured format.",
-    link: "/docs/card",
-    id: "card",
-    type: "component",
-  },
-  {
-    name: "Modal",
-    description:
-      "A modal dialog component for overlaying content on top of the existing UI.",
-    link: "/docs/modal",
-    id: "modal",
-    type: "component",
-  },
-  {
-    name: "Dropdown",
-    description:
-      "A user-friendly dropdown menu component for selecting options.",
-    link: "/docs/dropdown",
-    id: "dropdown",
-    type: "component",
-  },
-  {
-    name: "Navigation",
-    description: "A set of components for building navigation menus and links.",
-    link: "/docs/navigation",
-    id: "navigation",
-    type: "component",
-  },
-  {
-    name: "Form",
-    description: "A collection of components for creating user input forms.",
-    link: "/docs/form",
-    id: "form",
-    type: "component",
-  },
-  {
-    name: "Layout",
-    description:
-      "Components for defining the overall layout and structure of your application.",
-    link: "/docs/layout",
-    id: "layout",
-    type: "component",
-  },
   {
     name: "Introduction",
     description: (
@@ -117,5 +69,35 @@ export const docs = [
     link: "/docs/introduction",
     id: "introduction",
     type: "starter",
+    new: false,
+  },
+  {
+    name: "Bottom Navigator",
+    link: "/docs/botom-navigator",
+    id: "botom-navigator",
+    type: "component",
+    new: true,
+    description: (
+      <>
+        <table>
+          <thead>
+            <tr>
+              <th>hello</th>
+              <th>ngugas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>asdasd</td>
+              <td>gggfh</td>
+            </tr>
+            <tr>
+              <td>sdfsdf</td>
+              <td>sdfsdfsdfsdfsd</td>
+            </tr>
+          </tbody>
+        </table>
+      </>
+    ),
   },
 ];
