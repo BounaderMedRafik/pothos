@@ -1,12 +1,6 @@
 import { Gallery } from "@/components/marketing/Gallery";
 import Hero from "@/components/marketing/Hero";
-
-const images = [
-  {
-    image: "hello",
-    link: "/hello",
-  },
-];
+import { HeroGallery } from "@/data/marketing";
 
 export default function Home() {
   return (
@@ -16,7 +10,7 @@ export default function Home() {
         <Hero />
       </div>
       <div>
-        <Gallery items={images} speed="slow" />
+        <Gallery items={HeroGallery} speed="slow" />
       </div>
     </main>
   );

@@ -1,8 +1,7 @@
-import React from "react";
-import Logo from "../brand/Logo";
+import { ArrowRight, Github, Twitter } from "lucide-react";
 import Link from "next/link";
-import { ArrowRight, Github, Twitter, User } from "lucide-react";
-import { Button, buttonVariants } from "../ui/button";
+import Logo from "../brand/Logo";
+import { buttonVariants } from "../ui/button";
 import { ModeToggle } from "../ui/mode-toggle";
 
 const NavigationTop = () => {
@@ -35,20 +34,22 @@ const NavigationTop = () => {
         <div>
           <ModeToggle />
         </div>
-        <Link
-          href={"/docs"}
-          className={buttonVariants({
-            variant: "secondary",
-            size: "sm",
-          })}
-        >
-          <div className="flex items-center gap-2">
-            <div>Check Docs</div>
-            <div>
-              <ArrowRight size={15} />
+        <div className=" hidden md:block">
+          <Link
+            href={"/docs"}
+            className={buttonVariants({
+              variant: "secondary",
+              size: "sm",
+            })}
+          >
+            <div className="flex items-center gap-2">
+              <div>Check Docs</div>
+              <div>
+                <ArrowRight size={15} />
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </div>
   );

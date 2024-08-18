@@ -5,7 +5,7 @@ import { ArrowUpRight, Github } from "lucide-react";
 const Hero = () => {
   return (
     <div className="wrapper min-h-[40vh] flex items-center justify-center flex-col">
-      <div className="text-4xl max-w-2xl text-center font-UNBOUNDED">
+      <div className="text-4xl p-5 md:p-0 max-w-2xl text-center font-UNBOUNDED">
         POTHOS/UI: Built by the <span className="italic ">community</span>, for
         the <span className=" italic text-primary">community</span>.
       </div>

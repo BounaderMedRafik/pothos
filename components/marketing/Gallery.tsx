@@ -1,7 +1,11 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { Button } from "../ui/button";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export const Gallery = ({
   items,
@@ -12,7 +16,7 @@ export const Gallery = ({
 }: {
   items: {
     image: string;
-    link: string;
+    links: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -68,6 +72,7 @@ export const Gallery = ({
       }
     }
   };
+
   return (
     <div
       ref={containerRef}
@@ -85,14 +90,34 @@ export const Gallery = ({
         )}
       >
         {items.map((item, idx) => (
-          <div
-            className=" bg-foreground text-background flex items-center justify-center size-[200px] rounded-3xl"
-            key={idx}
-          >
-            {item.link}
-          </div>
+          <Link key={idx} href={item.links} className="group">
+            <motion.div className=" bg-foreground relative text-background flex items-center justify-center size-[200px] rounded-3xl overflow-hidden">
+              <img src={item.image} className=" h-full w-full object-cover" />
+
+              <div className=" absolute  opacity-0 group-hover:opacity-100 inset-0 w-full h-full bg-background/50 flex items-center justify-center">
+                <Button variant={"fore"} size={"sm"}>
+                  <div className="flex items-center gap-2">
+                    <div> check now</div>
+                    <div>
+                      <ArrowUpRight size={15} />
+                    </div>
+                  </div>
+                </Button>
+              </div>
+            </motion.div>
+          </Link>
         ))}
       </ul>
+      <div className=" flex items-center justify-center mt-2">
+        <Link href={"/docs"} className=" hover:opacity-75">
+          <div className="flex items-center gap-2">
+            <div className="text-sm">nagivate into components</div>
+            <div>
+              <ArrowRight size={15} />
+            </div>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };
