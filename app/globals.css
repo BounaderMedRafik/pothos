@@ -1,0 +1,66 @@
+@import url("https://fonts.cdnfonts.com/css/unbounded");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 12% 97%;
+    --foreground: 0 0% 3%;
+    --card: 180 12% 97%;
+    --card-foreground: 0 0% 3%;
+    --popover: 180 12% 97%;
+    --popover-foreground: 0 0% 3%;
+    --primary: 180 10% 51%;
+    --primary-foreground: 0 0% 3%;
+    --secondary: 180 12% 72%;
+    --secondary-foreground: 0 0% 3%;
+    --muted: 180 12% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 178 15% 63%;
+    --accent-foreground: 0 0% 3%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 3%;
+    --border: 180 12% 20%;
+    --input: 180 12% 20%;
+    --ring: 178 15% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 180 13% 3%;
+    --foreground: 0 0% 97%;
+    --card: 180 13% 3%;
+    --card-foreground: 0 0% 97%;
+    --popover: 180 13% 3%;
+    --popover-foreground: 0 0% 97%;
+    --primary: 180 10% 49%;
+    --primary-foreground: 180 13% 3%;
+    --secondary: 180 12% 28%;
+    --secondary-foreground: 0 0% 97%;
+    --muted: 180 14% 80%;
+    --muted-foreground: 0 0% 97%;
+    --accent: 178 15% 37%;
+    --accent-foreground: 0 0% 97%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 10%;
+    --border: 180 13% 60%;
+    --input: 180 14% 80%;
+    --ring: 178 15% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply max-w-7xl mx-auto p-4;
+  }
+}
