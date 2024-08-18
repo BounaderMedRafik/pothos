@@ -51,11 +51,98 @@
 }
 
 @layer base {
+  /* Global Styles */
   * {
     @apply border-border;
   }
+
+  /* Body Styles */
   body {
     @apply bg-background text-foreground;
+  }
+
+  p {
+    @apply opacity-75 mt-3 mb-5;
+  }
+
+  /* Heading Styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium;
+  }
+
+  h1 {
+    @apply pt-2 pb-4 text-5xl font-bold mb-4;
+  }
+
+  h2 {
+    @apply pt-2 pb-3 text-4xl font-semibold mb-3;
+  }
+
+  h3 {
+    @apply pt-2 pb-2 text-xl font-medium mb-2;
+  }
+
+  h4 {
+    @apply pt-1 pb-2 text-lg font-medium mb-2;
+  }
+
+  h5 {
+    @apply pt-1 pb-1 text-base font-medium mb-1;
+  }
+
+  h6 {
+    @apply pt-1 pb-1 text-sm font-medium mb-1;
+  }
+
+  /* Table Styles */
+  table {
+    @apply w-full table-auto border-collapse;
+  }
+
+  th,
+  td {
+    @apply border border-border p-2;
+  }
+
+  th {
+    @apply font-bold;
+  }
+
+  /* Link Styles */
+
+  /* Image Styles */
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  /* List Styles */
+  ul,
+  ol {
+    @apply list-disc pl-0;
+  }
+
+  li {
+    @apply py-3 max-w-xl;
+  }
+
+  /* Blockquote Styles */
+  blockquote {
+    @apply border-l-4 border-border pl-4;
+  }
+
+  /* Code Styles */
+  code {
+    @apply font-mono;
+  }
+
+  /* Pre Styles */
+  pre {
+    @apply overflow-x-auto;
   }
 }
 
