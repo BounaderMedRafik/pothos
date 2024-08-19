@@ -1,4 +1,5 @@
 @import url("https://fonts.cdnfonts.com/css/unbounded");
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&family=Playfair+Display:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -84,7 +85,7 @@
   }
 
   h3 {
-    @apply pt-2 pb-2 text-xl font-medium mb-2;
+    @apply pt-10 pb-2 text-xl font-medium mb-2;
   }
 
   h4 {
@@ -106,7 +107,7 @@
 
   th,
   td {
-    @apply border border-border p-2;
+    @apply border border-border/25 p-2 text-sm;
   }
 
   th {
@@ -137,12 +138,12 @@
 
   /* Code Styles */
   code {
-    @apply font-mono;
+    @apply font-JETBRAINS;
   }
 
   /* Pre Styles */
   pre {
-    @apply overflow-x-auto;
+    @apply overflow-x-auto overflow-y-auto font-JETBRAINS p-5 bg-foreground/5;
   }
 }
 

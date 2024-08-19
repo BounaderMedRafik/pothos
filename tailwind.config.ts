@@ -81,6 +81,7 @@ const config = {
       },
       fontFamily: {
         UNBOUNDED: "Unbounded",
+        JETBRAINS: "JetBrains Mono",
       },
     },
   },
