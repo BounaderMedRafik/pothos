@@ -1,10 +1,12 @@
-// type = starter | component
-// new = true | false
-
 import BottomNavigator from "@/components/Previews/bottom-navigator";
 import CodeBlock from "@/components/ui/CodeBlock";
 import { ExampleItemsNavigators } from "./exampleData";
 import Code from "@/components/ui/Code";
+import AnimatedPopOver from "@/components/Previews/animated-pop-over";
+import { Expand, X } from "lucide-react";
+
+// type = starter | component
+// new = true | false
 
 // boiler plate
 // {
@@ -12,6 +14,7 @@ import Code from "@/components/ui/Code";
 //   link: "/docs/introduction",
 //   id: "introduction",
 //   type: "starter",
+//   new: true,
 //   description: (
 //     <>
 
@@ -462,6 +465,164 @@ export default BottomNavigator;
                 Content of the description, which can be either a string or a
                 React node.
               </td>
+            </tr>
+          </tbody>
+        </table>
+      </>
+    ),
+  },
+  {
+    name: "Animated Pop Over",
+    link: "/docs/animated-pop-over",
+    id: "animated-pop-over",
+    type: "component",
+    new: true,
+    description: (
+      <>
+        <h2>Animated Pop Over</h2>
+        <p>
+          An animated Pop Over is a type of user interface element that appears
+          on top of the main content of a webpage or application, often to draw
+          attention to a specific message or task. The animation can vary but
+          typically includes effects such as fading in, sliding in from a side,
+          or zooming in from the center. These animations make the modal more
+          engaging and can help guide the user&apos;s focus. The modal usually
+          includes a header with a title, a body with the main content or form,
+          and a footer with action buttons such as "Close," "Submit," or
+          "Cancel." The background content is often dimmed to emphasize the
+          modal and prevent interaction with the rest of the page while the
+          modal is active.
+        </p>
+        <h3>Click Pop Over</h3>
+        <CodeBlock
+          code={`
+import AnimatedPopOver from "@/.../.../animated-pop-over.tsx";
+
+export default function Home() {
+  return (
+    <main className="relative">
+
+     <AnimatedPopOver
+        close="close me!"
+     
+        title={"BOO! did i scare you?"}
+        trigger={"click me love!"}
+      >
+            <div>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe at
+                non repudiandae omnis laborum necessitatibus?{" "}
+                  <span className="italic">nonesense right</span>?
+            </div>
+      </AnimatedPopOver>
+
+    </main>
+  );
+}
+`}
+        >
+          <AnimatedPopOver
+            close="close me!"
+            title={"BOO! did i scare you?"}
+            trigger={"click me love!"}
+          >
+            <div>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe at
+              non repudiandae omnis laborum necessitatibus?{" "}
+              <span className="italic">nonesense right</span>?
+            </div>
+          </AnimatedPopOver>
+        </CodeBlock>
+        <h3>Click Pop Over with icons</h3>
+        <CodeBlock
+          code={`
+import AnimatedPopOver from "@/.../.../animated-pop-over.tsx";
+
+export default function Home() {
+  return (
+    <main className="relative">
+
+      <AnimatedPopOver
+          close={
+              <div className="flex items-center gap-2">
+                <div>close me</div>
+                <div>
+                  <X size={15} />
+                </div>
+              </div>
+            }
+     
+          title={"BOO! did i scare you?"}
+          trigger = {
+              <div>
+                {" "}
+                <Expand size={15} />
+              </div>
+            }
+          >
+            <div>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe at
+              non repudiandae omnis laborum necessitatibus?{" "}
+              <span className="italic">nonesense right</span>?
+            </div>
+          </AnimatedPopOver>
+
+    </main>
+  );
+}`}
+        >
+          <AnimatedPopOver
+            close={
+              <div className="flex items-center gap-2">
+                <div>close me</div>
+                <div>
+                  <X size={15} />
+                </div>
+              </div>
+            }
+            title={"BOO! did i scare you?"}
+            trigger={
+              <div>
+                {" "}
+                <Expand size={15} />
+              </div>
+            }
+          >
+            <div>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe at
+              non repudiandae omnis laborum necessitatibus?{" "}
+              <span className="italic">nonesense right</span>?
+            </div>
+          </AnimatedPopOver>
+        </CodeBlock>
+        <h3>Component Api</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>children</td>
+              <td>React.ReactNode</td>
+              <td>The content to be displayed inside the popover.</td>
+            </tr>
+            <tr>
+              <td>title</td>
+              <td>string | React.ReactNode</td>
+              <td>The title of the popover.</td>
+            </tr>
+            <tr>
+              <td>trigger</td>
+              <td>string | React.ReactNode</td>
+              <td>The element that triggers the popover to open.</td>
+            </tr>
+            <tr>
+              <td>close</td>
+              <td>string | React.ReactNode</td>
+              <td>The element or text to close the popover.</td>
             </tr>
           </tbody>
         </table>
