@@ -78,8 +78,8 @@ export const docs = [
   },
   {
     name: "Bottom Navigator",
-    link: "/docs/botom-navigator",
-    id: "botom-navigator",
+    link: "/docs/bottom-navigator",
+    id: "bottom-navigator",
     type: "component",
     new: true,
     description: (
