@@ -25,7 +25,7 @@ const BottomNavigator: React.FC<BottomNavigatorProps> = ({ items, type }) => {
         <div>
           <div className="relative">
             {currentTab.map((item, i) => (
-              <AnimatePresence>
+              <AnimatePresence key={i}>
                 <motion.div
                   key={tab}
                   initial={{
@@ -124,7 +124,7 @@ const BottomNavigator: React.FC<BottomNavigatorProps> = ({ items, type }) => {
         <div>
           <div className="relative">
             {currentTab.map((item, i) => (
-              <AnimatePresence>
+              <AnimatePresence key={i}>
                 <motion.div
                   onHoverEnd={() => {
                     setTab("none");

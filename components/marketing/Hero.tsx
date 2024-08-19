@@ -1,6 +1,7 @@
 import React from "react";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import { ArrowUpRight, Github } from "lucide-react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -13,15 +14,21 @@ const Hero = () => {
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis
         animi, sequi obcaecati molestias vel magnam?
       </div>
-      <div className="flex items-center gap-1 mt-4">
-        <Button variant={"link"} size={"sm"}>
+      <div className="flex items-center gap-1 mt-6">
+        <Link
+          href={"/docs"}
+          className={buttonVariants({
+            variant: "link",
+            size: "sm",
+          })}
+        >
           <div className="flex items-center gap-2">
             <div>components</div>
             <div>
               <ArrowUpRight size={15} />
             </div>
           </div>
-        </Button>
+        </Link>
         <Button variant={"fore"} size={"sm"}>
           <div className="flex items-center gap-2">
             <div>Star on github</div>
