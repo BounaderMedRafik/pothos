@@ -121,7 +121,7 @@ export default function Home() {
         </div>
         <div className="h-1 w-full bg-foreground/20 py-10" />
         <h3>Navigate On Hover</h3>
-        <div>
+        <div className="hidden md:block">
           <CodeBlock
             code={`
 import BottomNavigator from "@/.../.../bottom-navigator.tsx";

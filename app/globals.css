@@ -133,7 +133,7 @@
 
   /* Blockquote Styles */
   blockquote {
-    @apply border-l-4 border-border pl-4;
+    @apply border-l-2 border-border  p-4 pl-7 bg-primary/25 italic mt-4;
   }
 
   /* Code Styles */
