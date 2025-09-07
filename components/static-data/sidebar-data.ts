@@ -24,4 +24,13 @@ export const SIDEBARITEMS: SideBarGroup[] = [
       },
     ],
   },
+  {
+    name: "Core Components",
+    children: [
+      {
+        name: "PostCard",
+        href: "/docs/postcard",
+      },
+    ],
+  },
 ];

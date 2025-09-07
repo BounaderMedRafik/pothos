@@ -1,0 +1,109 @@
+import ComponentCodePreview from "@/components/ui/component-code-preview.tsx";
+import PostCardExample from "@/app/docs/postcard/PostCardExample.tsx";
+import PostCardCustomStyling from "@/app/docs/postcard/PostCardCustomStyling.tsx";
+import CodeBlock from "@/components/ui/code-block.tsx";
+
+# Post Card
+
+The **PostCard** is a reusable UI component designed to showcase a single blog post in a **preview format**.  
+It’s not intended for rendering the full article, but rather as a **teaser card** that encourages readers to click through.
+
+This component is typically used in:
+
+- Homepage post grids
+- Category/tag pages
+- “Related posts” sections
+- Any feed or stream of content
+
+A PostCard combines **visual context (thumbnail), text metadata (title, description), and author info** into a clean, scannable block.
+
+---
+
+## Features
+
+- 📸 **Thumbnail support** — display a featured image or fallback visual.
+- 📝 **Title & description** — short preview text to hook the reader.
+- 👤 **Author details** — profile picture, name, and optional role/title.
+- 🖼️ **Reusable layout** — easily dropped into grids, carousels, or lists.
+- 🎨 **Customizable** — styling can be extended via props or class overrides.
+
+---
+
+## Example
+
+A basic PostCard implementation with default styling:
+
+<ComponentCodePreview
+  classNameComponentContainer="h-auto py-4"
+  component={<PostCardExample />}
+  filePath="app/docs/postcard/PostCardExample.tsx"
+/>
+
+---
+
+## Example with Custom Styling
+
+PostCard can be adapted to match different layouts or brand guidelines.  
+Here’s an example with **custom styling applied**:
+
+<ComponentCodePreview
+  classNameComponentContainer="h-auto py-4"
+  component={<PostCardCustomStyling />}
+  filePath="app/docs/postcard/PostCardCustomStyling.tsx"
+/>
+
+---
+
+## Installation
+
+To use PostCard in your project, copy the implementation into your codebase:
+
+<CodeBlock filePath="app/docs/postcard/PostCard.tsx" lang="tsx" />
+
+---
+
+## Usage Notes
+
+- ✅ Keep descriptions short (1–2 lines) to avoid layout breaks.
+- ✅ Always provide an accessible `alt` attribute for thumbnails.
+- ✅ Use consistent image aspect ratios across PostCards for clean grids.
+- ⚠️ Avoid overloading with metadata — keep the focus on **title + visual**.
+- 🎨 Extend via Tailwind classes or pass a `className` prop for overrides.
+
+---
+
+## When to Use
+
+Use **PostCard** whenever you need to represent a blog/article **without showing the full content**.  
+If you’re rendering the full article preview, consider a different component like `PostContent` or `ArticlePage`.
+
+---
+
+## Props
+
+<Table
+  data={{
+    headers: ["Prop", "Type", "Required", "Description"],
+    rows: [
+      ["thumbnail", "string", "Yes", "Post image URL"],
+      ["title", "string", "Yes", "The blog post title"],
+      ["description", "string", "Yes", "Short preview text"],
+      ["category", "string", "Yes", "Category label"],
+      ["author", "{ fullname, profilePicture, role }", "Yes", "Post author"],
+    ],
+  }}
+/>
+
+### Notes on `customClassNames`
+
+- `wrapper` → outer container div
+- `thumbnail` → post thumbnail image
+- `contentWrapper` → wraps all text content
+- `categoryLabel` → category text styling
+- `title` → main title text
+- `description` → description/teaser text
+- `divider` → the dashed line between content and author
+- `authorWrapper` → wrapper around author section
+- `authorProfilePic` → profile picture element
+- `authorFullName` → text styling for author’s name
+- `authorRole` → text styling for author’s role/title

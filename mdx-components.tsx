@@ -36,7 +36,7 @@ const components = {
   ),
   p: (props: ParagraphProps) => (
     <p
-      className="text-base md:text-lg leading-relaxed text-gray-800 dark:text-zinc-300 mb-4"
+      className="text-base opacity-75 md:text-lg leading-relaxed text-gray-800 dark:text-zinc-300 mb-4"
       {...props}
     />
   ),
@@ -141,6 +141,31 @@ const components = {
       className="pl-4 border-l-4 border-gray-300 dark:border-zinc-600 text-base md:text-lg italic text-gray-700 dark:text-zinc-300 my-6"
       {...props}
     />
+  ),
+  table: (props: ComponentPropsWithoutRef<"table">) => (
+    <table
+      className="w-full border-collapse text-base md:text-lg my-6"
+      {...props}
+    />
+  ),
+  thead: (props: ComponentPropsWithoutRef<"thead">) => (
+    <thead
+      className="border-b border-gray-300 dark:border-zinc-600"
+      {...props}
+    />
+  ),
+  tbody: (props: ComponentPropsWithoutRef<"tbody">) => <tbody {...props} />,
+  tr: (props: ComponentPropsWithoutRef<"tr">) => (
+    <tr className="border-b border-gray-200 dark:border-zinc-700" {...props} />
+  ),
+  th: (props: ComponentPropsWithoutRef<"th">) => (
+    <th
+      className="px-4 py-2 text-left font-semibold text-gray-700 dark:text-zinc-200"
+      {...props}
+    />
+  ),
+  td: (props: ComponentPropsWithoutRef<"td">) => (
+    <td className="px-4 py-2 text-gray-800 dark:text-zinc-300" {...props} />
   ),
 };
 

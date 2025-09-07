@@ -12,80 +12,84 @@ type Heading = {
 
 export function TableOfContents() {
   const [headings, setHeadings] = useState<Heading[]>([]);
+  const [activeId, setActiveId] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
-    const updateHeadings = () => {
-      const elements = Array.from(
-        document.querySelectorAll("h1, h2, h3, h4")
-      ) as HTMLElement[];
+    const elements = Array.from(
+      document.querySelectorAll("h1, h2, h3, h4")
+    ) as HTMLElement[];
 
-      const newHeadings = elements
-        .map((elem) => {
-          const level = parseInt(elem.tagName.replace("H", ""), 10);
+    const newHeadings = elements
+      .map((elem) => {
+        const level = parseInt(elem.tagName.replace("H", ""), 10);
+        if (level === 1) return null;
 
-          if (level === 1) return null; // skip H1 if you don’t want it
+        if (!elem.id) {
+          elem.id =
+            elem.textContent
+              ?.toLowerCase()
+              .replace(/\s+/g, "-")
+              .replace(/[^\w-]/g, "") ?? "";
+        }
 
-          // ensure an ID exists (fallback: slugify text)
-          if (!elem.id) {
-            elem.id =
-              elem.textContent
-                ?.toLowerCase()
-                .replace(/\s+/g, "-")
-                .replace(/[^\w-]/g, "") ?? "";
+        return {
+          id: elem.id,
+          link: elem.id,
+          text: elem.textContent ?? "",
+          level,
+        };
+      })
+      .filter((heading): heading is Heading => heading !== null);
+
+    setHeadings(newHeadings);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
           }
+        });
+      },
+      { rootMargin: "0px 0px -70% 0px" } // trigger when heading is ~30% from top
+    );
 
-          return {
-            id: `${elem.id}-${level}`,
-            link: elem.id,
-            text: elem.textContent ?? "",
-            level,
-          };
-        })
-        .filter((heading): heading is Heading => heading !== null);
-
-      setHeadings(newHeadings);
-    };
-
-    updateHeadings();
-
-    const observer = new MutationObserver(updateHeadings);
-    observer.observe(document.body, { childList: true, subtree: true });
-
+    elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, [pathname]);
 
   if (headings.length === 0) return null;
 
   return (
-    <>
-      <p className="mb-2 text-sm/6 font-[450] text-black dark:text-white">
+    <nav className="text-sm text-zinc-700 dark:text-zinc-400">
+      <p className="mb-2 font-medium text-zinc-900 dark:text-zinc-100">
         On this page
       </p>
-      <ul
-        className="list-none space-y-2 text-sm/6 text-zinc-700 dark:text-zinc-400"
-        role="list"
-        key={pathname}
-      >
-        {headings.map((heading) => (
+      <ul className="space-y-1">
+        {headings.map((heading, i) => (
           <li
-            key={`${heading.id}-${heading.level}-${pathname}`}
+            key={`${heading.id}-${heading.level}-${pathname}` + i}
             className={cn(
-              "transition-all duration-200",
               heading.level === 2 && "pl-0",
-              heading.level === 3 && "pl-2",
-              heading.level === 4 && "pl-4"
+              heading.level === 3 && "pl-3 text-[13px]",
+              heading.level === 4 && "pl-6 text-[12px] opacity-80"
             )}
           >
             <a
               href={`#${heading.link}`}
-              className={cn("hover:text-zinc-950 dark:hover:text-white")}
+              className={cn(
+                "transition-colors hover:underline",
+                activeId === heading.id
+                  ? "text-green-600 dark:text-green-400 font-medium"
+                  : "hover:text-zinc-900 dark:hover:text-white"
+              )}
             >
               {heading.text}
             </a>
           </li>
         ))}
       </ul>
-    </>
+    </nav>
   );
 }
