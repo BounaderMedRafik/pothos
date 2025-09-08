@@ -13,27 +13,25 @@ const PostCardCustomStyling = () => {
         fullname: "Bouander Med Rafik",
         role: "Underwater Ceramic Technician",
       }}
-      category="Real"
+      category="Research"
       customClassNames={{
         wrapper:
-          "relative overflow-hidden rounded-2xl shadow-xl border border-slate-800 bg-gradient-to-b from-slate-900 to-slate-800 hover:scale-[1.02] transition-transform duration-300",
+          "relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow duration-300",
         thumbnail:
-          "rounded-t-2xl h-56 object-cover transition-all duration-300 group-hover:brightness-110 group-hover:scale-105",
-        contentWrapper: "p-5 text-slate-200 backdrop-blur-sm",
+          "rounded-t-xl h-52 w-full object-cover transition-transform duration-500 hover:scale-105",
+        contentWrapper: "p-5 text-slate-800",
         categoryLabel:
-          "uppercase tracking-wide text-[10px] font-bold text-teal-400 group-hover:text-teal-300 transition-colors",
+          "uppercase tracking-wide text-[11px] font-semibold text-slate-500",
         title:
-          "font-extrabold text-xl mt-2 bg-gradient-to-r from-cyan-400 to-teal-500 bg-clip-text text-transparent group-hover:from-teal-400 group-hover:to-cyan-500 transition-colors",
-        description:
-          "mt-2 text-sm text-slate-400 leading-snug line-clamp-2 group-hover:text-slate-300 transition-colors",
-        divider:
-          "my-4 h-px w-full bg-gradient-to-r from-transparent via-slate-600 to-transparent opacity-70",
+          "font-serif text-lg font-bold mt-2 text-slate-900 hover:text-slate-700 transition-colors",
+        description: "mt-2 text-sm text-slate-600 leading-relaxed line-clamp-2",
+        divider: "my-4 h-px w-full bg-slate-200",
         authorWrapper: "flex items-center gap-3 mt-3",
         authorProfilePic:
-          "ring-2 ring-teal-400 ring-offset-2 ring-offset-slate-900 rounded-full transition-transform group-hover:rotate-3",
-        authorFullName: "font-semibold text-slate-200 group-hover:text-white",
-        authorRole:
-          "text-xs text-slate-400 italic tracking-wide group-hover:text-slate-300",
+          "w-9 h-9 rounded-full ring-1 ring-slate-300 object-cover",
+        authorFullName:
+          "font-medium text-slate-900 hover:text-slate-700 transition-colors",
+        authorRole: "text-xs text-slate-500 italic",
       }}
     />
   );

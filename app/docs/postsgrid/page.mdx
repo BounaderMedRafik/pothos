@@ -1,0 +1,112 @@
+import ComponentCodePreview from "@/components/ui/component-code-preview.tsx";
+
+import CodeBlock from "@/components/ui/code-block.tsx";
+import PostGridExample from "@/app/docs/postsgrid/PostGridExample.tsx";
+import PostGridExampleOptions from "@/app/docs/postsgrid/PostGridExampleOptions.tsx";
+import PostGridVerticalLayout from "@/app/docs/postsgrid/PostGridVerticalLayout.tsx";
+
+# Posts Grid
+
+The `PostsGrid` is a wrapper component designed to render multiple posts at once using [PostCard](/docs/postcard).  
+It’s not meant for displaying a single article, but for organizing collections of posts in different layouts.
+
+Common use cases include:
+
+- Blog homepages
+- Category/archive pages
+- Search results
+- Infinite scrolling feeds
+
+A **PostList** arranges posts in a vertical feed, while a **PostGrid** lays them out in a grid format.  
+Both handle looping through post data and can manage extras like pagination, tags, or “load more” functionality.
+
+---
+
+## Example
+
+A basic `PostsGrid` implementation with default styling:
+
+<ComponentCodePreview
+  classNameComponentContainer="h-auto py-4"
+  component={<PostGridExample />}
+  filePath="app/docs/postsgrid/PostGridExample.tsx"
+/>
+
+---
+
+## Example with options
+
+An example showing how flexible the component is when customizing props:
+
+<ComponentCodePreview
+  classNameComponentContainer="h-auto py-4"
+  component={<PostGridExampleOptions />}
+  filePath="app/docs/postsgrid/PostGridExampleOptions.tsx"
+/>
+
+---
+
+## Example of list layout
+
+A vertical feed layout (list mode):
+
+<ComponentCodePreview
+  classNameComponentContainer="h-auto py-4"
+  component={<PostGridVerticalLayout />}
+  filePath="app/docs/postsgrid/PostGridVerticalLayout.tsx"
+/>
+
+---
+
+## Installation
+
+Import the component directly into your project:
+
+<CodeBlock filePath="app/docs/postsgrid/PostsGrid.tsx" lang="tsx" />
+
+---
+
+## Props
+
+The `PostsGrid` component accepts the following props:
+
+<Table
+  data={{
+    headers: ["Prop", "Type", "Required", "Description"],
+    rows: [
+      ["posts", "any[]", "Yes", "Array of post objects to render"],
+      ["layout", '"grid" | "list"', "No", "Display style for posts"],
+      ["rows", "number", "No", "Number of rows in grid layout"],
+      ["cols", "number", "No", "Number of columns in grid layout"],
+      ["gap", "string", "No", "Tailwind gap utility for spacing"],
+      ["order", '"asc" | "desc"', "No", "Sort order for posts"],
+      ["title", "string", "No", "Optional heading for the section"],
+      ["description", "string", "No", "Optional description text"],
+      ["titleCentered", "boolean", "No", "Whether the title is centered"],
+      ["tags", "string[]", "No", "Filter tags for posts"],
+      ["itemsPerPage", "number", "No", "How many posts per page"],
+      ["listIcon", "React.ReactNode", "No", "Custom icon for list layout"],
+      [
+        "customClassNames",
+        "{ wrapper?, headerWrapper?, title?, description?, gridWrapper?, paginationWrapper?, tagsWrapper?, tagButton? }",
+        "No",
+        "Optional Tailwind class overrides for styling",
+      ],
+    ],
+  }}
+/>
+
+---
+
+### Notes on `customClassNames`
+
+You can override styling by passing a `customClassNames` object with the following keys:
+
+- `wrapper` → outer container wrapping the entire component
+- `headerWrapper` → wrapper around title + description section
+- `title` → section title styling
+- `description` → section description styling
+- `gridWrapper` → container for grid or list layout
+- `paginationWrapper` → wrapper for pagination controls
+- `tagsWrapper` → container for tags section
+- `tagButton` → styling for each tag button

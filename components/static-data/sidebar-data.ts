@@ -28,8 +28,12 @@ export const SIDEBARITEMS: SideBarGroup[] = [
     name: "Core Components",
     children: [
       {
-        name: "PostCard",
+        name: "Posts Card",
         href: "/docs/postcard",
+      },
+      {
+        name: "Posts Grid Container",
+        href: "/docs/postsgrid",
       },
     ],
   },

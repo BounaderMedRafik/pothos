@@ -102,14 +102,14 @@ const components = {
     );
   },
   Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
-    <div className="overflow-x-auto my-6">
-      <table className="w-full border-collapse text-base md:text-lg">
-        <thead>
-          <tr className="border-b border-gray-300 dark:border-zinc-600">
+    <div className="overflow-x-auto my-6 rounded-xl shadow-sm border border-gray-200 dark:border-zinc-700">
+      <table className="w-full border-collapse text-sm md:text-base">
+        <thead className="bg-gray-100 dark:bg-zinc-800">
+          <tr>
             {data.headers.map((header, index) => (
               <th
                 key={index}
-                className="px-4 py-2 text-left font-semibold text-gray-700 dark:text-zinc-200"
+                className="px-4 py-3 text-left font-semibold text-gray-700 dark:text-zinc-200"
               >
                 {header}
               </th>
@@ -120,12 +120,16 @@ const components = {
           {data.rows.map((row, index) => (
             <tr
               key={index}
-              className="border-b border-gray-200 dark:border-zinc-700"
+              className={`${
+                index % 2 === 0
+                  ? "bg-white dark:bg-zinc-900"
+                  : "bg-gray-50 dark:bg-zinc-800"
+              } hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors`}
             >
               {row.map((cell, cellIndex) => (
                 <td
                   key={cellIndex}
-                  className="px-4 py-2 text-gray-800 dark:text-zinc-300"
+                  className="px-4 py-3 text-gray-800 dark:text-zinc-300"
                 >
                   {cell}
                 </td>
@@ -136,6 +140,7 @@ const components = {
       </table>
     </div>
   ),
+
   blockquote: (props: BlockquoteProps) => (
     <blockquote
       className="pl-4 border-l-4 border-gray-300 dark:border-zinc-600 text-base md:text-lg italic text-gray-700 dark:text-zinc-300 my-6"
