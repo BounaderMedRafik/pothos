@@ -25,15 +25,36 @@ export const SIDEBARITEMS: SideBarGroup[] = [
     ],
   },
   {
-    name: "Core Components",
+    name: "Sections",
     children: [
       {
-        name: "Posts Card",
-        href: "/docs/postcard",
+        name: "Hero",
+        href: "/docs/sections/hero",
       },
       {
-        name: "Posts Grid Container",
-        href: "/docs/postsgrid",
+        name: "About",
+        href: "/docs/sections/about",
+      },
+      {
+        name: "Portfolio / Work",
+        href: "/docs/sections/portfolio",
+        isUpdated: true,
+      },
+      {
+        name: "Skills",
+        href: "/docs/sections/skills",
+      },
+      {
+        name: "Experience",
+        href: "/docs/sections/experience",
+      },
+      {
+        name: "Testimonials",
+        href: "/docs/sections/testimonials",
+      },
+      {
+        name: "Contact",
+        href: "/docs/sections/contact",
       },
     ],
   },

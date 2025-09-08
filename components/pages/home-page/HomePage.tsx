@@ -16,7 +16,7 @@ const HomePage = () => {
           </div>
 
           <h1 className="text-4xl text-center font-serif max-w-lg mx-auto">
-            UI kit & components for stunning, modern portfolios and blogs
+            UI kit & components for stunning, modern portfolios
           </h1>
           <p className="text-center mt-4 opacity-75 text-sm max-w-xs mx-auto">
             Built on top of{" "}
